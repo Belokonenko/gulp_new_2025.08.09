@@ -1,0 +1,56 @@
+@import '../components/button/button';
+@import '../components/product-card/product-card';
+
+.icon {
+  width: 40px;
+  height: 40px;
+  fill: #555;
+  transition: fill 0.3s;
+}
+
+.icon:hover {
+  fill: tomato;
+}
+
+/**
+ * =================================================================
+ * Использование иконок из SVG-спрайта через CSS mask
+ * =================================================================
+ */
+
+// Базовый класс для всех иконок
+.icon-mask {
+  display: inline-block;
+  width: 24px;  // Укажите нужный размер по умолчанию
+  height: 24px; // Укажите нужный размер по умолчанию
+  background-color: #000; // Укажите цвет иконки по умолчанию
+
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+// Модификатор для иконки "Icon"
+.icon-mask--icon {
+  mask-image: url('../sprite.svg#Icon');
+  -webkit-mask-image: url('../sprite.svg#Icon');
+}
+
+// Модификатор для иконки "Group"
+.icon-mask--group {
+  mask-image: url('../sprite.svg#Group');
+  -webkit-mask-image: url('../sprite.svg#Group');
+}
+
+// Модификатор для иконки "Group_234"
+.icon-mask--group234 {
+  mask-image: url('../sprite.svg#Group_234');
+  -webkit-mask-image: url('../sprite.svg#Group_234');
+}
+
+// Пример использования в HTML:
+// <span class="icon-mask icon-mask--icon"></span>
+// <span class="icon-mask icon-mask--group" style="width: 50px; height: 50px; background-color: red;"></span>
