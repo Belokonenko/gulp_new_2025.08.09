@@ -1,5 +1,8 @@
 # DAT-web
 
+![demo-web](./website-demo-image/desktop.jpg 'Desktop Demo')
+https://belokonenko.github.io/gulp_new_2025.08.09/
+
 ## Demo
 
 ![Desktop Demo](./website-demo-image/desktop.jpg 'Desktop Demo')
@@ -65,22 +68,34 @@
 
 Дальше, что еще умеет сборка:
 
--   сжимает изображения и конвертирует их дополнительно в формат `.webp` и
+-   сжимает изображения и конвертирует их дополнительно в формат 
+-    `.webp` 
 -   подключает их если браузер поддерживает этот формат;
 -
 -   копирует папку `/static` с содержимым в финальную сборку.
--   То есть любые файлы можно поместить в эту папку и она будет добавлена в финальную
--   сборку без лишней обработки;
--
--   отдельной командой `$ npm run sprite` cоздает "svg cпрайты";
--   перед каждым запуском сборщика чистит папку с финальным проектом, чтобы не собирать мусор;
--   иконки для спрайтов в папку`icons` из нее спрайты попадут в `dist/sprite.svg`
--   sprite.svg - файл для подключения
--   
-    ```html
 
+### SVG sprite
+    подключение sprite.html на стр первым в body
+    ```html
+        <body>
+          @@include('../assets/sprite.html')
+    ```
+    подключение svg 
+    ```html
+    <svg class="test" width="20" height="20">
+      <use xlink:href="#Icon-test"></use>
+    </svg>
+    ```
+    
+    пример sprite.html
+    ```html
+        
         <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
           <symbol id='Icon-test' viewBox="0 0 50 50">
+            <path d="M28.9275 34.4167H21.1219V50H28.9275V34.4167Z" fill="#FFD11A" />
+          </symbol>
+
+          <symbol id='Icon-smal' viewBox="0 0 50 50">
             <path d="M28.9275 34.4167H21.1219V50H28.9275V34.4167Z" fill="#FFD11A" />
           </symbol>
         </svg>
