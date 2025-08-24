@@ -1,7 +1,8 @@
 # DAT-web
 
-![demo-web](./website-demo-image/desktop.jpg 'Desktop Demo')
-https://belokonenko.github.io/gulp_new_2025.08.09/
+## Demo web
+![demo-web](https://belokonenko.github.io/gulp_new_2025.08.09/
+)
 
 ## Demo
 
