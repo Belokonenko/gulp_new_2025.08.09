@@ -13,7 +13,6 @@ import { scss } from './gulp/tasks/scss.js';
 import { javaScript } from './gulp/tasks/javaScript.js';
 import { images } from './gulp/tasks/images.js';
 import { otfToTtf, ttfToWoff, fontStyle } from './gulp/tasks/fonts.js';
-import { createSvgSprite } from './gulp/tasks/createSvgSprite.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftpDeploy } from './gulp/tasks/ftpDeploy.js';
 
@@ -32,7 +31,6 @@ function watcher() {
   gulp.watch(filePaths.watch.scss, handleSCSS);
   gulp.watch(filePaths.watch.js, handleJS);
   gulp.watch(filePaths.watch.images, handleImages);
-  gulp.watch(filePaths.watch.svgIcons, createSvgSprite); // Добавляем наблюдение за иконками
 }
 
 /**
@@ -46,7 +44,6 @@ const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 const devTasks = gulp.parallel(
   copy,
   copyRootFiles,
-  createSvgSprite,
   handleHTML,
   handleSCSS,
   handleJS,
@@ -74,4 +71,4 @@ gulp.task('default', dev);
 /**
  * Экспорт сценариев
  * */
-export { dev, build, deployZIP, deployFTP, createSvgSprite };
+export { dev, build, deployZIP, deployFTP };

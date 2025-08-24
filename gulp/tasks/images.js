@@ -8,7 +8,7 @@ import { logger } from '../config/Logger.js';
 
 const images = () => {
     return gulp
-        .src(filePaths.src.images)
+    .src(filePaths.src.images)
         .pipe(logger.handleError('IMAGES'))
         .pipe(plugins.newer(filePaths.build.images))
         .pipe(webp())

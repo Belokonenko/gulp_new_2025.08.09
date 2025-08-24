@@ -10,20 +10,12 @@
 
 <body>
   @@include('../layouts/header.html')
+  <p>test </p>
   <main>
-    <ul>
-      <li title="Icon">
-        <div class="icon-box">
-          <!-- Icon -->
-          <svg class="svg-Icon-dims">
-            <use xlink:href="sprite.svg#Icon"></use>
-          </svg>
-        </div>
-        <h2>Icon</h2>
-      </li>
-    </ul>
-    <div class="icon-bg"></div>
-
+    @@include('../assets/sprite.html')
+    <svg class="test" width="20" height="20">
+      <use xlink:href="#Icon-test"></use>
+    </svg>
     @@include('../components/product-card/product-card.html')
     @@include('../components/button/button.html')
   </main>

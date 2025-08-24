@@ -1,19 +1,20 @@
 import gulp from 'gulp';
 import fileInclude from 'gulp-file-include';
-import webpHtml from 'gulp-webp-html-nosvg';
+import avifHtml from 'gulp-avif-html';
 import versionNumber from 'gulp-version-number';
 import htmlMin from 'gulp-htmlmin';
 
 import { plugins } from '../config/plugins.js';
 import { filePaths } from '../config/paths.js';
-import { logger } from "../config/Logger.js";
+import { logger } from '../config/Logger.js';
 
 const html = (isBuild) => {
-  return gulp.src(filePaths.src.html)
+  return gulp
+    .src(filePaths.src.html)
     .pipe(logger.handleError('HTML'))
     .pipe(fileInclude())
     .pipe(plugins.replace(/@img\//g, 'images/'))
-    .pipe(plugins.if(isBuild, webpHtml()))
+    .pipe(plugins.if(isBuild, avifHtml()))
     .pipe(
       htmlMin({
         useShortDoctype: true,

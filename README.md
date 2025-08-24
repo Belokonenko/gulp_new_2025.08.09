@@ -78,15 +78,11 @@
 -   sprite.svg - файл для подключения
 -   
     ```html
-        <!-- Icon -->
-        <!-- <use xlink:href="path#name-icon"></use> -->
-        <svg class="name-class">
-        <use xlink:href="sprite.svg#Icon"></use>
-        </svg>
 
-        <!-- Icon -->
-        <svg class="icon" width="48" height="48">
-          <use href="sprite.svg#icon-star"></use>
+        <svg xmlns="http://www.w3.org/2000/svg" style="display:none;">
+          <symbol id='Icon-test' viewBox="0 0 50 50">
+            <path d="M28.9275 34.4167H21.1219V50H28.9275V34.4167Z" fill="#FFD11A" />
+          </symbol>
         </svg>
     ```
 -   
